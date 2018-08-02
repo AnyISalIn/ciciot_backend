@@ -286,9 +286,18 @@ body {
     padding-left: 0px;
 }
 
+.backd2 {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
 
 .backd3 {
-    padding-right:0px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+
+.backd4 {
+    padding-right: 0px;
 }
 
 #journals .backd1 img {
@@ -301,8 +310,12 @@ body {
     height: 330px;
 }
 
-
 #journals .backd3 img {
+    width: 100%;
+    height: 330px;
+}
+
+#journals .backd4 img {
     width: 100%;
     height: 330px;
 }
@@ -322,6 +335,11 @@ body {
     height: 100%;
 }
 
+#views .backd4 img {
+    width: 100%;
+    height: 100%;
+}
+
 #cvtns .backd1 img {
     width: 100%;
     height: 100%;
@@ -337,12 +355,16 @@ body {
     height: 100%;
 }
 
+#cvtns .backd4 img {
+    width: 100%;
+    height: 100%;
+}
+
 .backd11 {
     border: 1px solid #dedede;
     font-size: 14px;
     text-align: center;
     text-overflow: ellipsis;
-    white-space: nowrap;
     overflow: hidden;
     padding-top: 6%;
     font-weight: 500;
@@ -390,15 +412,15 @@ body {
 }
 
 /*#img1 {*/
-    /*position: absolute;*/
-    /*margin-left: -20px;*/
-    /*z-index: 11;*/
+/*position: absolute;*/
+/*margin-left: -20px;*/
+/*z-index: 11;*/
 /*}*/
 
 /*#img2 {*/
-    /*position: absolute;*/
-    /*margin-left: -20px;*/
-    /*z-index: 1;*/
+/*position: absolute;*/
+/*margin-left: -20px;*/
+/*z-index: 1;*/
 /*}*/
 
 .change1 {

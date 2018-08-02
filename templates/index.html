@@ -94,15 +94,18 @@
                     <div class="col-md-10 back offset-md-1">
                         <img src="/static/ciciot/static/journal/back1.png">
                         <p class="head">往期回顾</p>
-                        <p class="footer"><a href="/articles?category=%E7%89%A9%E8%81%94%E7%BD%91%E5%AD%A6%E6%8A%A5">更多&nbsp></a></p>
+                        <p class="footer"><a href="/articles?category=%E7%89%A9%E8%81%94%E7%BD%91%E5%AD%A6%E6%8A%A5">更多&nbsp></a>
+                        </p>
                     </div>
                     <div class="col-md-10 offset-md-1" style="margin-bottom: 30px;">
                         <div class="row">
                             {% for article in paper_articles %}
                                 {% if forloop.first %}
                                     <div class="col-md-4 backd{{ forloop.counter }}">
-                                {% else %}
-                                    <div class="col-md-4 backd{{ forloop.counter }} ">
+                                {% elif forloop.last %}
+                                    <div class="col-md-4 backd4">
+                                {% else  %}
+                                    <div class="col-md-4 backd{{ forloop.counter }}">
                                 {% endif %}
                             <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}"
                                                                                  alt=""></a>
@@ -540,29 +543,22 @@
                         <img src="/static/ciciot/static/journal/xuebao.png">
                         <div class="row backed">
                             {% for article in session_articles %}
-                                {% if forloop.first %}
-                                    <div class="col-md-3 backd1">
-                                {% else %}
-                                    {% if forloop.counter > 3 %}
-                                        <div class="col-md-3 backd3">
-                                    {% else %}
-                                        <div class="col-md-3 backd{{ forloop.counter }}">
-                                    {% endif %}
-                                {% endif %}
-                            <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}"
-                                                                                 alt=""></a>
-                            <div class="backd11">
-                                <a href="{% url 'article:detail' article.id %}"><p>{{ article.title }}</p></a>
-                            </div>
-                            </div>
+                                <div class="col-md-3 backd{{ forloop.counter }}">
+                                    <a href="{% url 'article:detail' article.id %}"><img
+                                            src="{{ article.preview_picture }}"
+                                            alt=""></a>
+                                    <div class="backd11">
+                                        <a href="{% url 'article:detail' article.id %}"><p>{{ article.title }}</p></a>
+                                    </div>
+                                </div>
                             {% endfor %}
-                            </div>
-                            </div>
-
-
                         </div>
                     </div>
+
+
                 </div>
+            </div>
+        </div>
     </section>
     <section id="views">
         <div class="view">
@@ -570,32 +566,26 @@
                 <div class="row">
                     <div class="col-md-10 xuebao offset-md-1"><p>大咖视点</p>
                         <img src="/static/ciciot/static/journal/xuebao.png">
-                        <p class="read-more"><a href="/articles?category=%E5%A4%A7%E5%92%96%E8%A7%86%E7%82%B9">更多&nbsp></a></p>
+                        <p class="read-more"><a
+                                href="/articles?category=%E5%A4%A7%E5%92%96%E8%A7%86%E7%82%B9">更多&nbsp></a></p>
                         <div class="row backed">
                             {% for article in boss_articles %}
-                                {% if forloop.first %}
-                                    <div class="col-md-3 backd1">
-                                {% else %}
-                                    {% if forloop.counter > 3 %}
-                                        <div class="col-md-3 backd3">
-                                    {% else %}
-                                        <div class="col-md-3 backd{{ forloop.counter }}">
-                                    {% endif %}
-                                {% endif %}
-                            <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}"
-                                                                                 alt=""></a>
-                            <div class="backd11">
-                                <a href="{% url 'article:detail' article.id %}"><p>{{ article.title }}</p></a>
-                            </div>
-                            </div>
+                                <div class="col-md-3 backd{{ forloop.counter }}">
+                                    <a href="{% url 'article:detail' article.id %}"><img
+                                            src="{{ article.preview_picture }}"
+                                            alt=""></a>
+                                    <div class="backd11">
+                                        <a href="{% url 'article:detail' article.id %}"><p>{{ article.title }}</p></a>
+                                    </div>
+                                </div>
                             {% endfor %}
-                            </div>
-                            </div>
-
-
                         </div>
                     </div>
+
+
                 </div>
+            </div>
+        </div>
     </section>
 
 {% endblock %}
