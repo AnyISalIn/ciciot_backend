@@ -4,7 +4,6 @@ from article.models import Article, Category, Author
 
 
 class ArticleAdmin(admin.ModelAdmin):
-
     readonly_fields = ['content_preview']
     list_display = ['title', 'author', 'pub_date', 'is_public']
     list_filter = ['pub_date', 'author', 'categorise']

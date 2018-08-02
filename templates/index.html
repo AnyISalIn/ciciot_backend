@@ -104,7 +104,7 @@
                                     <div class="col-md-4 backd{{ forloop.counter }}">
                                 {% elif forloop.last %}
                                     <div class="col-md-4 backd4">
-                                {% else  %}
+                                {% else %}
                                     <div class="col-md-4 backd{{ forloop.counter }}">
                                 {% endif %}
                             <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}"
@@ -116,10 +116,10 @@
                             </div>
                             {% endfor %}
                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
     </section>
 
     <section id="skills">

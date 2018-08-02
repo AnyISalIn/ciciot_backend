@@ -1,20 +1,24 @@
 #head {
     font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
-#head .col-md-6{
+
+#head .col-md-6 {
     padding: 0px;
     margin-top: 2px;
     margin-bottom: 5px;
 }
-#head .col-md-3{
+
+#head .col-md-3 {
     padding: 0px;
 }
-#head .col-md-1{
+
+#head .col-md-1 {
     padding: 0px;
     text-align: right;
     margin-top: 30px;
     margin-left: 8px;
 }
+
 .searchbox {
     position: relative;
     z-index: 1;
@@ -25,6 +29,7 @@
     border: 1px solid #aaaaaa;
     margin-left: 0px;
 }
+
 .searchbox .import {
     width: 190px;
     margin-left: 0px;
@@ -38,15 +43,16 @@
     font-size: 13px;
 }
 
-#head a{
-    text-decoration:none;
-    color:black;
+#head a {
+    text-decoration: none;
+    color: black;
     margin-right: 5px;
     margin-left: 5px;
-    display:inline;
+    display: inline;
     font-size: 13px;
 }
-#head a:hover{
+
+#head a:hover {
     color: blue;
 }
 
@@ -61,8 +67,8 @@
     margin-right: -2px;
     font-size: 14px;
 }
-#head h5
-{
+
+#head h5 {
     padding-bottom: 27px;
     padding-top: 29px;
     padding-left: 10px;
@@ -70,7 +76,7 @@
     font-weight: 300;
     font-size: 22px;
 }
-#head .color-blue
-{
+
+#head .color-blue {
     color: #2a83d3;
 }

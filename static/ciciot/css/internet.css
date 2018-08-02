@@ -1,252 +1,318 @@
-.pageall{
-	background-color: #2a83d3;
-	 
-}
-.pageall .container .row .col-md:hover{
-	background-color:#348fe0;
-}
-.pageall a{
-	color: inherit;
-	text-decoration:none
-}
-.pageall a p{
-	color: #ffffff;
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 18px;
-	text-align:center;
-	margin-top:16px;
-}
-.pageall .currentpage{
-	
-}
-.downlink{
-	margin-top: 30px;
-}
-.downlink .col-md-10{
-	border: 1px solid #dee2e6;
-}
-.downlink .now{
-	background-color: #2a83d3
-}
-.downlink .now a p{
-	color: white;
-	text-align: center;
-}
-.downlink a{
-	color: #999999;
-	text-decoration:none
-}
-.downlink a p{
-	margin-top:16px;
-	text-align: center;
- 	font-size: 22px;
- 	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
- 	font-color:#666666;
+.pageall {
+    background-color: #2a83d3;
+
 }
 
-.banner .container .row .col-md-10{
-	margin-top: 30px;
-	padding-left: 0;
-	padding-right: 0
+.pageall .container .row .col-md:hover {
+    background-color: #348fe0;
+}
+
+.pageall a {
+    color: inherit;
+    text-decoration: none
+}
+
+.pageall a p {
+    color: #ffffff;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.pageall .currentpage {
+
+}
+
+.downlink {
+    margin-top: 30px;
+}
+
+.downlink .col-md-10 {
+    border: 1px solid #dee2e6;
+}
+
+.downlink .now {
+    background-color: #2a83d3
+}
+
+.downlink .now a p {
+    color: white;
+    text-align: center;
+}
+
+.downlink a {
+    color: #999999;
+    text-decoration: none
+}
+
+.downlink a p {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-color: #666666;
+}
+
+.banner .container .row .col-md-10 {
+    margin-top: 30px;
+    padding-left: 0;
+    padding-right: 0
 }
 
 .banner .carousel-inner img {
-      width: 100%;
-      height: 350px;
-  }
-.banner .carousel-item .carousel-caption{
-	font-size: 18px;
+    width: 100%;
+    height: 350px;
 }
 
-
-.issue{
-	margin-top: 30px;
-}
-.issue .i{
-	margin-bottom: 20px;
-}
-.issue .it{
-	padding-left: 0;
-	padding-right: 20px; 
-}
-.issue .it .item{
-	border:0.02px solid #dee2e6; 
-}
-.issue .it .item .item-img{
-	width:100%;
-	height:180px;
-}
-.issue .it .item  .item-title{
-	margin-top: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-.issue .it .item  .item-title span{
-	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 18px;
-	color:#333333;
-}
-.issue .it .item  .item-content{
-	margin-bottom: 24px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-.issue .it .item  .item-content span{
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 16px;
-	color: #999999;
-	display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;
-}
-.issue .col-md-12{
-	margin-top: 20px;
-	padding-left: 0;
-}
-.issue .col-md-12 .readmore{
-	border: 1px solid #dee2e6;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-.issue .col-md-12 .readmore a{
-	color:#999999;
-	text-decoration:none
-}
-.issue .col-md-12 .readmore a p{
-	margin-bottom: 0px;
-	text-align: center;
-}
- 
-.issue .container .row .rightside{
-	padding-left: 0px;
-	padding-right: 0px;
-}
-.hotinfo{
-	background-color: #f9f9f9;	 
-	padding-top: 15px;
-	padding-bottom: 5px;
-}
-.hotinfo .feature-img{
-	margin-left: 20px
-}
-.hotinfo span{
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	color:#333333;
-	font-size: 22px
-}
- 
-.hotinfo li{
-	margin-top: 10px;
-	color: #ced4da;
-}
-.hotinfo li a{	
-	color:#666666;
-	text-decoration:none;
-	font-size: 18px;
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;vertical-align: middle;
+.banner .carousel-item .carousel-caption {
+    font-size: 18px;
 }
 
-.news{
-	margin-top: 20px;
-	background-color: #f9f9f9;
-	padding-top: 15px;
-	padding-bottom: 5px;
+.issue {
+    margin-top: 30px;
 }
-.news .feature-img{
-	margin-left: 20px
+
+.issue .i {
+    margin-bottom: 20px;
 }
-.news span{
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	color:#333333;
-	font-size: 22px
+
+.issue .it {
+    padding-left: 0;
+    padding-right: 20px;
 }
-.news .smalltab{
-	margin-top: 10px;
-	margin-bottom: 10px;
+
+.issue .it .item {
+    border: 0.02px solid #dee2e6;
 }
+
+.issue .it .item .item-img {
+    width: 100%;
+    height: 180px;
+}
+
+.issue .it .item .item-title {
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.issue .it .item .item-title span {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+    color: #333333;
+}
+
+.issue .it .item .item-content {
+    margin-bottom: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.issue .it .item .item-content span {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 16px;
+    color: #999999;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.issue .col-md-12 {
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.issue .col-md-12 .readmore {
+    border: 1px solid #dee2e6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.issue .col-md-12 .readmore a {
+    color: #999999;
+    text-decoration: none
+}
+
+.issue .col-md-12 .readmore a p {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.issue .container .row .rightside {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.hotinfo {
+    background-color: #f9f9f9;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.hotinfo .feature-img {
+    margin-left: 20px
+}
+
+.hotinfo span {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #333333;
+    font-size: 22px
+}
+
+.hotinfo li {
+    margin-top: 10px;
+    color: #ced4da;
+}
+
+.hotinfo li a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.news {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.news .feature-img {
+    margin-left: 20px
+}
+
+.news span {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #333333;
+    font-size: 22px
+}
+
+.news .smalltab {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* Style the tab */
 .news .smalltab .tab {
-    overflow: hidden;    
+    overflow: hidden;
 }
-.news .smalltab .tab .fortabtitle{
-	margin-left: 0px;
-	margin-right: 0px
+
+.news .smalltab .tab .fortabtitle {
+    margin-left: 0px;
+    margin-right: 0px
 }
-.news .smalltab .tab .fortabtitle .col-md{
-	padding-left: 6px;
-	padding-right: 0px
+
+.news .smalltab .tab .fortabtitle .col-md {
+    padding-left: 6px;
+    padding-right: 0px
 }
+
 /* Style the buttons inside the tab */
 .news .smalltab .tab button {
     background-color: inherit;
     float: left;
     border: none;
     outline: none;
-    cursor: pointer;  
+    cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
     color: #666666;
     padding-left: 0px;
     padding-right: 0px
 }
+
 /* Change background color of buttons on hover */
 .news .smalltab .tab button:hover {
- 
+
 }
+
 /* Create an active/current tablink class */
 .news .smalltab .tab button.active {
-    color:#2a83d3;
+    color: #2a83d3;
 }
+
 /* Style the tab content */
 .news .smalltab .smalltabcontent {
     display: none;
-    padding: 6px 12px;   
+    padding: 6px 12px;
     border-top: none;
 }
+
 .news .carousel-inner img {
-      width: 100%;
-      height: 100%;
-  }
-.news .news-article{
-	margin-top: 20px;
-}
-.news .news-article p {
-	margin-left: 18px;
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 18px;
-	color: #666666
-}
-.news .news-article a{
-	color: inherit;	
-	text-decoration:none;
-	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;
+    width: 100%;
+    height: 100%;
 }
 
-.rank{
-	margin-top: 20px;
-	background-color: #f9f9f9;
-	padding-top: 15px;
-	padding-bottom: 5px;
+.news .news-article {
+    margin-top: 20px;
 }
-.rank .feature-img{
-	margin-left: 15px
+
+.news .news-article p {
+    margin-left: 18px;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+    color: #666666
 }
-.rank span{
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	color:#333333;
-	font-size: 22px
+
+.news .news-article a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.rank li{
-	margin-top: 10px;
+
+.rank {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
-.rank .rank123{
-	color: #666666;
-	list-style-image:url(../static/internet/rank123.png);
+
+.rank .feature-img {
+    margin-left: 15px
 }
-.rank a span{
-	color: #666666;
-	text-decoration: none;
-	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 18px;
-	display: inline-block; white-space: nowrap;width: 100%; overflow: hidden; text-overflow:ellipsis;vertical-align: -26%
+
+.rank span {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #333333;
+    font-size: 22px
+}
+
+.rank li {
+    margin-top: 10px;
+}
+
+.rank .rank123 {
+    color: #666666;
+    list-style-image: url(../static/internet/rank123.png);
+}
+
+.rank a span {
+    color: #666666;
+    text-decoration: none;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: -26%
 }
