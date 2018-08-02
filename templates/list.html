@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md offset-md-1 linefirst">
-                    <a href="#"><p>首页</p></a>
+                    <a href="/"><p>首页</p></a>
                 </div>
                 <div class="col-md">
                     <a href="#"><p>新闻动态</p></a>
@@ -86,10 +86,10 @@
                             <a href="#"><p>{{ current_category }}</p></a>
                         </div>
                         <div class="col-md">
-                            <a href="/articles?category={{ next_category }}"><p>{{ next_category }}</p></a>
+                            <a href="/articles?category={{ next_category | urlencode }}"><p>{{ next_category }}</p></a>
                         </div>
                         <div class="col-md">
-                            <a href="/articles?category={{ next_category }}"><p>{{ next_next_category }}</p></a>
+                            <a href="/articles?category={{ next_category | urlencode }}"><p>{{ next_next_category }}</p></a>
                         </div>
                     </div>
 
