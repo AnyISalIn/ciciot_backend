@@ -1,9 +1,10 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block meta_head %}
     {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="/static/ciciot/css/internet.css">
-    <link href="/static/ciciot/css/head.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "ciciot/css/internet.css" %}">
+    <link href="{% static "ciciot/css/head.css" %}" rel="stylesheet">
 
 {% endblock %}
 {% block content %}
@@ -155,7 +156,8 @@
 
                         <div class="col-md-3 rightside">
                             <div class="hotinfo">
-                                <img class="feature-img" src="/static/ciciot/static/internet/hotinfo.png" alt="热门资讯">
+                                <img class="feature-img" src="{% static "ciciot/static/internet/hotinfo.png" %}"
+                                     alt="热门资讯">
                                 <span>热门资讯</span>
                                 <ul>
                                     {% for article in articles %}
@@ -164,7 +166,8 @@
                                 </ul>
                             </div>
                             <div class="news">
-                                <img class="feature-img" src="/static/ciciot/static/internet/news.png" alt="新闻专题">
+                                <img class="feature-img" src="{% static "ciciot/static/internet/news.png" %}"
+                                     alt="新闻专题">
                                 <span>新闻专题</span>
                                 <div class="smalltab">
                                     <div class="tab">
@@ -225,7 +228,8 @@
 
                             </div>
                             <div class="rank">
-                                <img class="feature-img" src="/static/ciciot/static/internet/rank.png" alt="热门排行">
+                                <img class="feature-img" src="{% static "ciciot/static/internet/rank.png" %}"
+                                     alt="热门排行">
                                 <span>热门排行</span>
                                 <ol>
                                     {% for article in articles %}

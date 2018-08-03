@@ -40,23 +40,6 @@
     background-color: #ecf0f1;
 }
 
-#footers .col-md-4 {
-    padding: 0px;
-}
-
-#footers .col-md-3 {
-    padding: 0px;
-}
-
-#footers .col-md-2 {
-    padding: 0px;
-    margin-left: -30px;
-}
-
-#footers .col-md-1 {
-    padding: 0px;
-}
-
 #footers p {
     font-size: 14px;
     line-height: 10px;

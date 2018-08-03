@@ -3,6 +3,13 @@ body {
 
 }
 
+#head h5 {
+    display: inline-block;
+}
+
+#head h5:nth-child(3) {
+    color: #358fe0;;
+}
 .mai-icon {
     background: rgb(64, 210, 177);
     color: #ffffff;
@@ -14,42 +21,18 @@ body {
     margin-right: 20px;
 }
 
-.navbar-default {
-    background-color: #f2f3ff;
-    border: none;
+.navbar.navbar-expand-sm.navbar-light {
+    background-color: #2a83d3;
 }
 
-.navbar-default .navbar-brand {
-    font-size: 30px;
-    font-weight: bold;
-    color: #2d8cff;
-    height: 65px;
-    line-height: 25px;
-
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 22px;
 }
 
-.navbar-default .navbar-nav > li > a {
-    font-size: 15px;
-    font-weight: bold;
-    color: #000000;
-    height: 50px;
-    line-height: 25px;
-    background-color: #ffffff;
-
-}
-
-.navbar-toggle {
-    margin-top: 18px;
-}
-
-.navbar-default .navbar-toggle:hover {
-    border-color: #22e7ff;
-    background-color: #22e7ff;
-}
-
-.navbar-default .navbar-toggle.icon-bar {
-    background-color: #000000;
-    font-weight: bold;
+.navbar-nav.mr-auto .col-md:hover {
+    background-color: #358fe0;
+    transition: background-color 0.2s;
 }
 
 #context {
@@ -116,7 +99,7 @@ body {
     margin-right: -200px;
 }
 
-#ad .col-md-5 {
+#ad .col-md-6 {
     padding: 0px;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -127,20 +110,14 @@ body {
 }
 
 #ad .first .carousel-item {
-    width: 450px;
     height: 310px;
     overflow: hidden;
 
 }
 
-#ad .first .carousel-item img {
-    width: 450px;
-    height: 310px;
-
-}
-
 #ad .second {
     height: 100%;
+    /*max-width: 594px;*/
     border: 1px solid #cccccc;
 
 }
@@ -149,7 +126,7 @@ body {
     margin: 0px;
     height: 51.5px;
     border-bottom: 0.15px solid #f9f9f9;
-    width: 473px;
+    /*width: 473px;*/
 
 }
 
@@ -193,8 +170,8 @@ body {
 .xuebao {
     font-size: 24px;
     text-align: center;
-    margin-top: 3%;
-    margin-bottom: 1%;
+    margin-top: 45px;
+    margin-bottom: 31px;
 
 }
 
@@ -275,7 +252,7 @@ body {
 
 .back .footer {
     font-size: 18px;
-    margin-left: 94%;
+    float: right;
 }
 
 .backed .col-md {
@@ -302,22 +279,22 @@ body {
 
 #journals .backd1 img {
     width: 100%;
-    height: 330px;
+    max-height: 330px;
 }
 
 #journals .backd2 img {
     width: 100%;
-    height: 330px;
+    max-height: 330px;
 }
 
 #journals .backd3 img {
     width: 100%;
-    height: 330px;
+    max-height: 330px;
 }
 
 #journals .backd4 img {
     width: 100%;
-    height: 330px;
+    max-height: 330px;
 }
 
 #views .backd1 img {
@@ -363,6 +340,7 @@ body {
 .backd11 {
     border: 1px solid #dedede;
     font-size: 14px;
+    height: 76px;
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -380,6 +358,7 @@ body {
 }
 
 .skill {
+    height: 517px;
     background-color: white;
 }
 
@@ -398,7 +377,7 @@ body {
     font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
-#tech-lib .col-md-2 {
+#tech-lib .col-md {
     padding-left: 0px;
     margin-top: 2%;
 }
@@ -462,7 +441,7 @@ body {
     margin-right: 0px;
     border: 1px solid rgba(0, 0, 0, .125);
     margin-bottom: 30px;
-    height: 125px;
+    height: 182px;
 
 }
 
@@ -471,17 +450,18 @@ body {
     margin-left: 0px;
     border: 1px solid rgba(0, 0, 0, .125);
     margin-bottom: 30px;
-    height: 125px;
+    height: 182px;
 }
 
-#platform-libary .col-md-2 {
-    padding-left: 28px;
-    align-content: center;
-    margin-top: 15px;
+#platform-libary img {
+    width: 55px;
+    height: 55px;
+    margin-top: 34px;
+    margin-left: 34px;
 }
 
 #platform-libary .col-md-9 {
-    margin-top: 15px;
+    margin-top: 34px;
 }
 
 #platform-libary h4 {
@@ -578,3 +558,119 @@ body {
     margin-top: -50px;
     margin-right: -15px;
 }
+
+@media only screen and (max-width: 1200px) {
+    #context .col-md-2 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #context .col-md-2 {
+        font-size: 12px;
+    }
+
+    #context .title2 {
+        height: 55px;
+    }
+
+    #ad .second a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #ad .first .carousel-item {
+        width: 540px;
+    }
+
+    #ad .first {
+        padding: 0px;
+    }
+
+    .backd1 {
+        padding-left: 0px;
+        padding-right: 0px;
+
+    }
+
+    .backd2 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .backd3 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .backd4 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .backed img {
+        display: none;
+    }
+
+    #journals .col-md-4 img {
+        display: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 20px;
+    }
+
+    #studys .left-card {
+        margin-right: -15px;
+    }
+
+    #studys .right-card {
+        margin-left: -15px;
+    }
+
+    #uses .right-card {
+        margin-left: -15px;
+    }
+
+    #uses .left-card {
+        margin-right: -15px;
+    }
+
+    #studys img {
+        display: none;
+    }
+
+    #uses img {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    #skills {
+        display: none;
+
+    }
+
+    .navbar.navbar-expand-sm.navbar-light {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+
+    }
+
+    #ad .first {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .journal1 .photo {
+        display: none;
+    }
+
+    #head h5:nth-child(3) {
+        display: none;
+    }
+
+}
+
