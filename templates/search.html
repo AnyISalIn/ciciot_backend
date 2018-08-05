@@ -1,0 +1,94 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block meta_head %}
+    {{ block.super }}
+
+    <link rel="stylesheet" href="{% static 'ciciot/css/head2.css' %}">
+    <link rel="stylesheet" href="{% static 'ciciot/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'ciciot/css/nav.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include '_nav.html' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 my-4">
+                <div class="main">
+                    <form class="row search-box mx-0" action="/articles/search">
+                        <div class="col-md-2 search-condition d-flex justify-content-center align-items-center">
+                            <p class="my-0">全文检索</p>
+                        </div>
+                        <input type="text" class="col-md-6 col-sm-8 col-8 search-content d-flex align-items-center"
+                               value="{{ keyword }}" name="keyword" required>
+                        <input type="submit"
+                               class="col-md-4 col-sm-4 col-4 search-button d-flex justify-content-center align-items-center"
+                               value="搜索">
+                    </form>
+
+                    <div class="search-count">
+                        <p>含 "{{ keyword }} 的搜索结果约 {{ count }} 条</p>
+                    </div>
+
+                    <div class="search-result">
+                        {% for article in articles %}
+                            <div class="result-item row mx-0">
+                                <div class="article-image col-md-4 d-none d-md-block px-0"><img
+                                        src="{{ article.preview_picture }}" alt=""></div>
+                                <div class="article-content col-md-8">
+                                    <h5 class="title my-0"><a
+                                            href="{% url 'article:detail' article.id %}"
+                                            class="article-link">{{ article.title }}</a></h5>
+                                    <div class="content">{{ article.headline }}</div>
+                                    <div class="pub-date">{{ article.pub_date | date:"Y-m-d H:i" }}</div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="read-more d-flex justify-content-center align-items-center">
+                        <p class="my-0">点击查看更多</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 px-0 my-4">
+                <div class="hot-info">
+                    <div class="title my-0">
+                        <img src="{% static 'ciciot/static/details/fire1.png' %}" alt="">
+                        今日热点
+                    </div>
+
+                    <ul>
+                        {% for article in hot_articles %}
+                            <li><p class="my-0"><a href="{% url 'article:detail' article.id %}"
+                                                   class="article-link">{{ article.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="recommend">
+                    <div class="title my-0">
+                        <img src="{% static 'ciciot/static/details/circle1.png' %}" alt="">
+                        精彩推荐
+                    </div>
+
+                    {% for article in recomment_articles %}
+                        <div class="item d-flex flex-row">
+                            <div class="article-image">
+                                <img src="{{ article.preview_picture }}" alt="">
+                            </div>
+                            <div class="article-info">
+                                <p class="title pt-0 my-0"><a
+                                        href="{% url 'article:detail' article.id %}"
+                                        class="article-link">{{ article.title }}</a></p>
+                                <p class="pub-date pt-0 my-0">{{ article.pub_date | date:"Y-m-d" }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

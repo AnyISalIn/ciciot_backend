@@ -77,3 +77,17 @@ class ListView(View):
 
         context.update(get_next_categories(category))
         return render(request, self.template_name, context)
+
+
+class SearchView(View):
+    template_name = 'search.html'
+
+    def get(self, request):
+        keyword = request.GET.get('keyword', '')
+        articles = Article.objects.filter(title__contains=keyword).all()
+        return render(request, self.template_name, {'articles': articles,
+                                                    'keyword': keyword,
+                                                    'count': articles.count(),
+                                                    'hot_articles': get_hot_articles(6),
+                                                    'recomment_articles': Article.objects.filter(is_public=True)[:5],
+                                                    })
