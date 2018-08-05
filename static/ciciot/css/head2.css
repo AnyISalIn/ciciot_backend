@@ -1,82 +1,38 @@
-#head {
-    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+.head {
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
-#head .col-md-6 {
-    padding: 0px;
-    margin-top: 2px;
-    margin-bottom: 5px;
-}
-
-#head .col-md-3 {
-    padding: 0px;
-}
-
-#head .col-md-1 {
-    padding: 0px;
-    text-align: right;
-    margin-top: 30px;
-    margin-left: 8px;
-}
-
-.searchbox {
-    position: relative;
-    z-index: 1;
-    clear: both;
-    width: 285px;
-    height: 35px;
-    margin: 27px auto 10px;
-    border: 1px solid #aaaaaa;
-    margin-left: 0px;
-}
-
-.searchbox .import {
-    width: 190px;
-    margin-left: 0px;
-    margin-top: 7px;
-    padding-left: 10px;
-    border-right-width: 0px;
-    border-top-width: 0px;
-    border-bottom-width: 0px;
-    border-left-width: 0px;
-    outline: none;
-    font-size: 13px;
-}
-
-#head a {
-    text-decoration: none;
-    color: black;
-    margin-right: 5px;
-    margin-left: 5px;
-    display: inline;
-    font-size: 13px;
-}
-
-#head a:hover {
-    color: blue;
-}
-
-.searchbox .btn-search {
-    position: absolute;
-    right: 0;
-    width: 95px;
-    height: 34px;
-    color: #fff;
-    background-color: #2a83d3;
-    border: 0;
-    margin-right: -2px;
-    font-size: 14px;
-}
-
-#head h5 {
-    padding-bottom: 27px;
-    padding-top: 29px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    font-weight: 300;
+.head h5 {
     font-size: 22px;
+    font-weight: 400;
 }
 
-#head .color-blue {
+.head .title {
+}
+
+.head .subtitle {
     color: #2a83d3;
+}
+
+.head .search-content {
+    border: 1px solid #cccccc;
+    font-size: 20px;
+}
+
+.head input[type="submit"] {
+    background-color: #2a83d3;
+    font-size: 22px;
+    width: 120px;
+    color: #ffffff;
+}
+
+.head .search-box {
+    height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .head .subtitle {
+        display: none;
+    }
 }

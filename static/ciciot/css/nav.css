@@ -1,0 +1,27 @@
+.navbar.navbar-expand-sm.navbar-light {
+    background-color: #2a83d3;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 22px;
+}
+
+.navbar-nav.mr-auto .col-md:hover {
+    background-color: #358fe0;
+    transition: background-color 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar.navbar-expand-sm.navbar-light {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+
+    }
+}
