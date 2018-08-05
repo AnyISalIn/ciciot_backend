@@ -28,7 +28,7 @@
     margin-top: 30px;
 }
 
-.downlink .col-md-10 {
+.downlink .col-md {
     border: 1px solid #dee2e6;
 }
 
@@ -54,7 +54,7 @@
     font-color: #666666;
 }
 
-.banner .container .row .col-md-10 {
+.banner .container .row .col-md {
     margin-top: 30px;
     padding-left: 0;
     padding-right: 0
@@ -78,7 +78,6 @@
 }
 
 .issue .it {
-    padding-left: 0;
     padding-right: 20px;
 }
 
@@ -126,7 +125,6 @@
 
 .issue .col-md-12 {
     margin-top: 20px;
-    padding-left: 0;
 }
 
 .issue .col-md-12 .readmore {
@@ -315,4 +313,31 @@
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: -26%
+}
+
+@media only screen and (max-width: 768px) {
+    .pageall {
+        display: none;
+    }
+
+    .bigtabcontent {
+        display: none;
+    }
+
+    .item-img {
+        display: none;
+    }
+
+    .col-md-4.it {
+        padding: 0px;
+    }
+
+    .readmore {
+        display: none;
+    }
+
+
+    .smalltabcontent .carousel {
+        display: none;
+    }
 }

@@ -3,13 +3,10 @@ body {
 
 }
 
-#head h5 {
-    display: inline-block;
-}
-
 #head h5:nth-child(3) {
     color: #358fe0;;
 }
+
 .mai-icon {
     background: rgb(64, 210, 177);
     color: #ffffff;
@@ -19,20 +16,6 @@ body {
     text-align: center;
     line-height: 40px;
     margin-right: 20px;
-}
-
-.navbar.navbar-expand-sm.navbar-light {
-    background-color: #2a83d3;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: white !important;
-    font-size: 22px;
-}
-
-.navbar-nav.mr-auto .col-md:hover {
-    background-color: #358fe0;
-    transition: background-color 0.2s;
 }
 
 #context {
@@ -617,10 +600,6 @@ body {
         display: none;
     }
 
-    .navbar-light .navbar-nav .nav-link {
-        font-size: 20px;
-    }
-
     #studys .left-card {
         margin-right: -15px;
     }
@@ -650,12 +629,6 @@ body {
 @media only screen and (max-width: 576px) {
     #skills {
         display: none;
-
-    }
-
-    .navbar.navbar-expand-sm.navbar-light {
-        padding-top: 8px !important;
-        padding-bottom: 8px !important;
 
     }
 

@@ -1,53 +1,16 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block meta_head %}
     {{ block.super }}
-    <link href="/static/ciciot/css/journal.css" rel="stylesheet">
-    <link href="/static/ciciot/css/head2.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "ciciot/css/journal.css" %}">
+    <link href="{% static "ciciot/css/head2.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ciciot/css/nav.css' %}">
 
 {% endblock %}
 {% block content %}
-    <nav class="navbar navbar-expand-sm navbar-light py-0">
-        <div class="container">
-            <div class="row w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-                        aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    {% include '_nav.html' %}
 
-                <div class="collapse navbar-collapse" id="navbarsExample07">
-                    <ul class="navbar-nav mr-auto w-100">
-                        <div class="col-md">
-                            <li class="nav-item">
-                                <a class="nav-link my-2" href="#journals">物联网学报</a>
-                            </li>
-                        </div>
-                        <div class="col-md">
-                            <li class="nav-item">
-                                <a class="nav-link my-2" href="#skills">技术知识库</a>
-                            </li>
-                        </div>
-                        <div class="col-md">
-                            <li class="nav-item ">
-                                <a class="nav-link my-2" href="#studys">研究学习平台</a>
-                            </li>
-                        </div>
-                        <div class="col-md ">
-                            <li class="nav-item">
-                                <a class="nav-link my-2" href="#uses">应用知识库</a>
-                            </li>
-                        </div>
-                        <div class="col-md ">
-                            <li class="nav-item ">
-                                <a class="nav-link my-2" href="#cvtns">行业会议</a>
-                            </li>
-                        </div>
-                </div>
-            </div>
-            </ul>
-        </div>
-        </div>
-    </nav>
 
     <section id="ad">
         <div class="ad1">
@@ -120,8 +83,9 @@
                                 {% else %}
                                     <div class="col-md-4 backd{{ forloop.counter }}">
                                 {% endif %}
-                            <a href="{% url 'article:detail' article.id %}"><img src="{{ article.preview_picture }}"
-                                                                                 alt=""></a>
+                            <a href="{% url 'article:detail' article.id %}"><img
+                                    src="{{ article.preview_picture }}"
+                                    alt=""></a>
                             <div class="backd11">
                                 <a href="{% url 'article:detail' article.id %}">
                                     <p>【第{{ forloop.counter }}期】{{ article.title }}</p></a>
@@ -399,8 +363,6 @@
     </section>
 
 
-
-
     <section id="studys">
         <div class="study">
             <div class="container">
@@ -466,7 +428,8 @@
                                 <div class="col-md-9">
                                     <h4>出版平台</h4>
                                     <p><a href="http://www.ptpress.com.cn/" target="_blank">邮电出版社</a> &nbsp | &nbsp
-                                        <a href="http://www.kygl.net.cn/CN/volumn/current.shtml" target="_blank">科研统计与期刊评价</a>
+                                        <a href="http://www.kygl.net.cn/CN/volumn/current.shtml"
+                                           target="_blank">科研统计与期刊评价</a>
                                     </p>
                                 </div>
                             </div>
@@ -576,7 +539,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 xuebao"><p>大咖视点</p>
-                        <img src="/static/ciciot/static/journal/xuebao.png">
+                        <img src="{% static "ciciot/static/journal/xuebao.png" %}">
                         <p class="read-more"><a
                                 href="/articles?category=%E5%A4%A7%E5%92%96%E8%A7%86%E7%82%B9">更多&nbsp></a></p>
                         <div class="row backed">
@@ -615,5 +578,7 @@
             $(this).children("p").addClass("p11").parent().siblings().children("p").removeClass("p11");
             $('#tech-lib .container').eq(i - 1).show().siblings().hide();
         });
+
+
     </script>
 {% endblock %}

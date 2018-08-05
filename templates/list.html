@@ -4,7 +4,7 @@
 {% block meta_head %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static "ciciot/css/internet.css" %}">
-    <link href="{% static "ciciot/css/head.css" %}" rel="stylesheet">
+    <link href="{% static "ciciot/css/head2.css" %}" rel="stylesheet">
 
 {% endblock %}
 {% block content %}
@@ -12,7 +12,7 @@
     <div class="pageall">
         <div class="container">
             <div class="row">
-                <div class="col-md offset-md-1 linefirst">
+                <div class="col-md">
                     <a href="/"><p>首页</p></a>
                 </div>
                 <div class="col-md">
@@ -36,21 +36,19 @@
                 <div class="col-md">
                     <a href="#"><p>专题</p></a>
                 </div>
-                <div class="col-md linelast">
+                <div class="col-md">
                     <a href="#"><p>教育</p></a>
-                </div>
-                <div class="col-md-1">
                 </div>
 
             </div>
             <div class="row">
-                <div class="col-md offset-md-1 linefirst">
+                <div class="col-md">
                     <a href="#"><p>人物</p></a>
                 </div>
                 <div class="col-md">
                     <a href="#"><p>前沿科技</p></a>
                 </div>
-                <div class="col-md currentpage">
+                <div class="col-md">
                     <a href="internet.html"><p>互联网+</p></a>
                 </div>
                 <div class="col-md">
@@ -68,10 +66,8 @@
                 <div class="col-md">
                     <a href="#"><p>论坛</p></a>
                 </div>
-                <div class="col-md linelast">
+                <div class="col-md">
                     <a href="#"><p>学报</p></a>
-                </div>
-                <div class="col-md-1">
                 </div>
             </div>
         </div>
@@ -80,22 +76,17 @@
     <div class="downlink">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 offset-md-1">
-
-                    <div class="row">
-                        <div class="col-md now">
-                            <a href="#"><p>{{ current_category }}</p></a>
-                        </div>
-                        <div class="col-md">
-                            <a href="/articles?category={{ next_category | urlencode }}"><p>{{ next_category }}</p></a>
-                        </div>
-                        <div class="col-md">
-                            <a href="/articles?category={{ next_category | urlencode }}"><p>{{ next_next_category }}</p>
-                            </a>
-                        </div>
-                    </div>
-
+                <div class="col-md now">
+                    <a href="#"><p>{{ current_category }}</p></a>
                 </div>
+                <div class="col-md">
+                    <a href="/articles?category={{ next_category | urlencode }}"><p>{{ next_category }}</p></a>
+                </div>
+                <div class="col-md">
+                    <a href="/articles?category={{ next_category | urlencode }}"><p>{{ next_next_category }}</p>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -104,11 +95,12 @@
 
     <div id="bigcontent1" class="bigtabcontent">
 
-    <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    {% include '_slideshare.html' with picture_url="/static/ciciot/static/internet/banner.jpg" %}
+        <div class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        {% include '_slideshare.html' with picture_url="/static/ciciot/static/internet/banner.jpg" %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,7 +109,7 @@
     <div class="issue">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 offset-md-1">
+                <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-9 leftside">
                             {% for article in articles %}
@@ -172,18 +164,18 @@
                                 <div class="smalltab">
                                     <div class="tab">
                                         <div class="row fortabtitle">
-                                            <div class="col-md tabtitle1">
+                                            <div class="col-md col tabtitle1">
                                                 <button class="smalltablinks"
                                                         onclick="openTabSmall(event, 'smallcontent1')"
                                                         id="defaultOpenSmall">新闻动态
                                                 </button>
                                             </div>
-                                            <div class="col-md tabtitle2">
+                                            <div class="col-md col tabtitle2">
                                                 <button class="smalltablinks"
                                                         onclick="openTabSmall(event, 'smallcontent2')">前沿科技
                                                 </button>
                                             </div>
-                                            <div class="col-md tabtitle">
+                                            <div class="col-md col tabtitle">
                                                 <button class="smalltablinks"
                                                         onclick="openTabSmall(event, 'smallcontent3')">网络科技
                                                 </button>
