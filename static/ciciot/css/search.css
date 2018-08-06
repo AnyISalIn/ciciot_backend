@@ -17,6 +17,7 @@ body {
     border: 1px solid #cccccc;
     border-left: 1px solid #f3f3f3;
     font-size: 20px;
+    border-radius: 0px;
 }
 
 input[type=submit] {
@@ -33,12 +34,15 @@ input[type=submit] {
 
 .search-button {
     background-color: #2a83d3;
+    border: 0px;
+    border-radius: 0px;
 }
 
 .result-item {
     height: 200px;
     margin-bottom: 20px;
     border: 1px solid #cccccc;
+    border-radius: 0px;
 }
 
 .read-more {

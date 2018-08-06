@@ -4,7 +4,7 @@
 }
 
 .head h5 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -18,21 +18,45 @@
 .head .search-content {
     border: 1px solid #cccccc;
     font-size: 20px;
+    width: 262px;
+    border-radius: 0px;
 }
 
 .head input[type="submit"] {
     background-color: #2a83d3;
     font-size: 22px;
-    width: 120px;
     color: #ffffff;
+    width: 131px;
+    border: 0px;
+    border-radius: 0px;
 }
 
 .head .search-box {
     height: auto;
 }
 
+@media only screen and (max-width: 991px) {
+
+    .head input[type="submit"] {
+        width: 105px;
+    }
+
+    .head .search-content {
+        width: 210px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .head .subtitle {
         display: none;
     }
+
+    .head input[type="submit"] {
+        width: 100px;
+    }
+
+    .head .search-content {
+        width: 150px;
+    }
 }
+
