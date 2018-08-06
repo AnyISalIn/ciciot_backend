@@ -1,0 +1,95 @@
+.hot-info {
+    background-color: #fafafa;
+    margin-bottom: 20px;
+}
+
+.hot-info .title {
+    font-size: 22px;
+    color: #333333;
+    padding-top: 28px;
+    padding-left: 11px;
+}
+
+.hot-info ul {
+    margin-top: 23px;
+    font-size: 18px;
+    padding-left: 28px;
+}
+
+.hot-info li {
+    padding-bottom: 15px;
+    list-style-image: url("../static/details/circle.png");
+}
+
+.hot-info li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.recommend {
+    background-color: #fafafa;
+    padding-bottom: 23px;
+}
+
+.recommend .title {
+    font-size: 22px;
+    color: #333333;
+    padding-top: 28px;
+    padding-left: 11px;
+    padding-bottom: 23px;
+}
+
+.recommend .article-image {
+    width: 115px;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.recommend .article-image img {
+    height: 76px;
+    width: 100%;
+}
+
+.recommend .item {
+    margin-bottom: 14px;
+}
+
+.recommend .item .title {
+    font-size: 16px;
+    color: #666666;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 16px;
+    padding-left: 0px;
+}
+
+.recommend .item .pub-date {
+    color: #b6b6b6;
+    font-size: 16px;
+}
+
+.article-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media only screen and (max-width: 992px) {
+    .recommend .item .title {
+        width: 100%;
+        white-space: pre-wrap;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .recommend .item .article-image {
+        display: none;
+    }
+
+    .recommend .item .article-info {
+        padding-left: 11px;
+    }
+}

@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="col-lg-3 px-0 my-4">
+    <div class="hot-info">
+        <div class="title my-0">
+            <img src="{% static 'ciciot/static/details/fire1.png' %}" alt="">
+            今日热点
+        </div>
+
+        <ul>
+            {% for article in hot_articles %}
+                <li><p class="my-0"><a href="{% url 'article:detail' article.id %}"
+                                       class="article-link">{{ article.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="recommend">
+        <div class="title my-0">
+            <img src="{% static 'ciciot/static/details/circle1.png' %}" alt="">
+            精彩推荐
+        </div>
+
+        {% for article in recomment_articles %}
+            <div class="item d-flex flex-row">
+                <div class="article-image">
+                    <img src="{{ article.preview_picture }}" alt="">
+                </div>
+                <div class="article-info">
+                    <p class="title pt-0 my-0"><a
+                            href="{% url 'article:detail' article.id %}"
+                            class="article-link">{{ article.title }}</a></p>
+                    <p class="pub-date pt-0 my-0">{{ article.pub_date | date:"Y-m-d" }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
