@@ -13,6 +13,7 @@
         <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
         <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="http://static.geetest.com/static/tools/gt.js"></script>
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="{% static "ciciot/css/footer.css" %}" rel="stylesheet">
     {% endblock %}
@@ -24,14 +25,6 @@
 {% block content %}{% endblock %}
 {% include '_footer.html' %}
 {% block script %}
-    <script>
-        $('#dropdownMenuButton').(function () {
-                $('.dropdown').dropdown('toggle')
-            },
-            function () {
-                $('.dropdown').dropdown('dispose')
-            })
-    </script>
 {% endblock %}
 </body>
 </html>
