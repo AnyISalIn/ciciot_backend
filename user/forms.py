@@ -51,15 +51,18 @@ class UserRegisterForm(UserCreationForm):
     def save(self, *args, **kwargs):
         self.instance.is_active = False
         super().save(self, *args, **kwargs)
-        send_mail(
-            '请激活您的账户 -- 物联网技术应用',
-            '点击以下链接激活您的账户 http://www.ciciot.com{}'.format(
-                reverse_lazy('user:active',
-                             kwargs={'uidb64': urlsafe_base64_encode(force_bytes(self.instance.pk)).decode(),
-                                     'token': default_token_generator.make_token(self.instance)})),
-            settings.EMAIL_FROM,
-            [self.instance.email]
-        )
+        try:
+            send_mail(
+                '请激活您的账户 -- 物联网技术应用',
+                '点击以下链接激活您的账户 http://www.ciciot.com{}'.format(
+                    reverse_lazy('user:active',
+                                 kwargs={'uidb64': urlsafe_base64_encode(force_bytes(self.instance.pk)).decode(),
+                                         'token': default_token_generator.make_token(self.instance)})),
+                settings.EMAIL_FROM,
+                [self.instance.email]
+            )
+        except Exception as e:
+            pass
         return self.instance
 
 

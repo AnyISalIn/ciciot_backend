@@ -7,11 +7,30 @@ from django.utils.http import urlsafe_base64_decode
 from django.views.generic import FormView, View, TemplateView, CreateView
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from django.contrib.auth.models import User
+from django.conf import settings
+from django.http import HttpResponse
+from geetest import GeetestLib
 
 from user.forms import UserRegisterForm, UserLoginForm
 
 
-class RegisterView(CreateView):
+class GeeTestMixin(object):
+    gid = settings.GEETEST_ID
+    gkey = settings.GEETEST_KEY
+
+    def check_request(self, request):
+        gt = GeetestLib(self.gid, self.gkey)
+        challenge = request.POST.get(gt.FN_CHALLENGE, '')
+        validate = request.POST.get(gt.FN_VALIDATE, '')
+        seccode = request.POST.get(gt.FN_SECCODE, '')
+        status = request.session[gt.GT_STATUS_SESSION_KEY]
+        user_id = request.session["user_id"]
+        if status:
+            return gt.success_validate(challenge, validate, seccode, user_id)
+        return gt.failback_validate(challenge, validate, seccode)
+
+
+class RegisterView(CreateView, GeeTestMixin):
     template_name = 'login_and_register.html'
     form_class = UserRegisterForm
     success_url = reverse_lazy('user:login')
@@ -23,12 +42,19 @@ class RegisterView(CreateView):
         })
         return context
 
+    def form_valid(self, form):
+        super().form_valid(form)
+        messages.add_message(self.request, messages.INFO, '激活邮件已发出，请检查您的邮箱')
+        return HttpResponseRedirect(self.get_success_url())
+
     def post(self, request, *args, **kwargs):
-        messages.add_message(request, messages.INFO, '激活邮件已发出，请检查您的邮箱')
+        if not self.check_request(request):
+            messages.add_message(request, messages.ERROR, '验证失败')
+            return HttpResponseRedirect(reverse_lazy('user:register'))
         return super().post(request, *args, **kwargs)
 
 
-class LoginView(FormView):
+class LoginView(FormView, GeeTestMixin):
     template_name = 'login_and_register.html'
     form_class = UserLoginForm
     success_url = reverse_lazy('home')
@@ -45,6 +71,10 @@ class LoginView(FormView):
         email = data.get('email', None)
         password = data.get('password')
         user = User.objects.filter(email=email).first()
+        if not self.check_request(request):
+            messages.add_message(request, messages.ERROR, '验证失败')
+            return HttpResponseRedirect(reverse_lazy('user:login'))
+
         if user and user.check_password(password):
             if user.is_active:
                 login(request, user)
@@ -78,3 +108,15 @@ class ActiveView(View):
             'form_title': '登录',
             'form': UserLoginForm,
         })
+
+
+class GtValidateView(View, GeeTestMixin):
+
+    def get(self, request):
+        user_id = 'test'
+        gt = GeetestLib(self.gid, self.gkey)
+        status = gt.pre_process(user_id)
+        request.session[gt.GT_STATUS_SESSION_KEY] = status
+        request.session["user_id"] = user_id
+        response_str = gt.get_response_str()
+        return HttpResponse(response_str)
