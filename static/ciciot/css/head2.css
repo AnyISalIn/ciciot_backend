@@ -35,6 +35,19 @@
     height: auto;
 }
 
+.head a {
+    color: inherit;
+    font-size: 18px;
+}
+
+#dropdownMenuButton {
+    font-size: 20px;
+}
+
+#dropdownMenuButton:hover {
+    background-color: #f9f9f9;
+}
+
 @media only screen and (max-width: 991px) {
 
     .head input[type="submit"] {
@@ -47,7 +60,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .head .subtitle {
+    .head h5 {
         display: none;
     }
 

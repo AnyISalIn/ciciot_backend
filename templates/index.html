@@ -566,6 +566,7 @@
 
 {% block script %}
 
+    {{ block.super }}
     <script>
         $(document).ready(function () {
             $(".change1")[0].click();
@@ -578,7 +579,6 @@
             $(this).children("p").addClass("p11").parent().siblings().children("p").removeClass("p11");
             $('#tech-lib .container').eq(i - 1).show().siblings().hide();
         });
-
 
     </script>
 {% endblock %}

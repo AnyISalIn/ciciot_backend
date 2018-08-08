@@ -1,6 +1,6 @@
 from article.models import Article, Category
 
-from django.views import View
+from django.views.generic import TemplateView, View
 from django.shortcuts import render, get_object_or_404
 
 
@@ -13,18 +13,21 @@ def fetch_category_articles(category_name, number):
                article_set.filter(is_public=True).all()[:number]
 
 
-class IndexView(View):
+class IndexView(TemplateView):
     template_name = 'index.html'
 
-    def get(self, request):
-        context = {
-            'page_title': '物联网技术与应用|物联网学报',
-            'second_articles': Article.objects.filter(is_public=True)[:6],
-            'paper_articles': fetch_category_articles('物联网学报', 3),
-            'session_articles': fetch_category_articles('会展', 4),
-            'boss_articles': fetch_category_articles('大咖视点', 4)
-        }
-        return render(request, self.template_name, context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(
+            {
+                'page_title': '物联网技术与应用|物联网学报',
+                'second_articles': Article.objects.filter(is_public=True)[:6],
+                'paper_articles': fetch_category_articles('物联网学报', 3),
+                'session_articles': fetch_category_articles('会展', 4),
+                'boss_articles': fetch_category_articles('大咖视点', 4)
+            }
+        )
+        return context
 
 
 class DetailView(View):

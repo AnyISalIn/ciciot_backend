@@ -86,8 +86,8 @@
 {% endblock %}
 
 {% block script %}
+    {{ block.super }}
     <script>
-
         $('.like').click(function () {
             $(this).children('i').removeClass('fa-thumbs-to-up');
             $(this).children('i').addClass('fa-thumbs-up');

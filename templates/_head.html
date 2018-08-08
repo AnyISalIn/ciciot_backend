@@ -1,6 +1,6 @@
 {% load static %}
 <section class="head">
-    <div class="container">
+    <div class="container p-0">
         <form class="d-flex justify-content-start align-items-center " action="/articles/search">
             <a href="/"><img src="{% static "ciciot/static/details/logo.png" %}" width="83px" height="83px"></a>
             <div class="px-1">
@@ -14,10 +14,26 @@
                 <input class="py-1 search-content" type="text" name="keyword" required>
                 <input class="py-1" type="submit" value="搜索">
             </div>
+            <div class="ml-4">
+                {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <div id="dropdownMenuButton" class="p-2"
+                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="m-0">{{ user.username }} <i class="fa fa-user-circle" aria-hidden="true"></i></p>
+                        </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% url 'user:logout' %}">注销</a>
+                            <a class="dropdown-item" href="#">更改密码</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{% url 'user:login' %}">登录</a>|<a href="{% url 'user:register' %}">注册</a>
+                {% endif %}
+            </div>
         </form>
-
-    </div>
-
-
     </div>
 </section>
+
+
+

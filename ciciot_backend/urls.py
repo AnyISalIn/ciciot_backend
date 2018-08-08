@@ -17,13 +17,15 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from django.urls import path
 from django.contrib import admin
 from article.views import IndexView
 
 urlpatterns = [
-                  url(r'^$', IndexView.as_view()),
-                  url(r'^admin/', admin.site.urls),
-                  url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-                  url(r'^articles/', include('article.urls', 'article')),
+                  path('', IndexView.as_view(), name='home'),
+                  path('admin/', admin.site.urls),
+                  path('ckeditor/', include('ckeditor_uploader.urls')),
+                  path('articles/', include('article.urls', 'article')),
+                  path('user/', include('user.urls', 'user')),
               ] + static('/uploads', document_root=settings.CKEDITOR_UPLOAD_PATH)
 urlpatterns += staticfiles_urlpatterns()

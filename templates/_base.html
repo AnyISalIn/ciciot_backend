@@ -23,6 +23,15 @@
 {% endblock %}
 {% block content %}{% endblock %}
 {% include '_footer.html' %}
-{% block script %}{% endblock %}
+{% block script %}
+    <script>
+        $('#dropdownMenuButton').(function () {
+                $('.dropdown').dropdown('toggle')
+            },
+            function () {
+                $('.dropdown').dropdown('dispose')
+            })
+    </script>
+{% endblock %}
 </body>
 </html>

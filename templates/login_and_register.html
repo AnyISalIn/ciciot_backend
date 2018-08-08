@@ -1,0 +1,72 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block meta_head %}
+    {{ block.super }}
+    <link href="{% static "ciciot/css/head2.css" %}" rel="stylesheet">
+    <link href="{% static "ciciot/css/register.css" %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form class="user-form col-lg-6 col-md-8 col-12 mx-auto my-2 border py-4" method="post"
+                {% if form_title == '注册' %}
+              action="{% url 'user:register' %}">
+                {% else %}
+                    action="{% url 'user:login' %}">
+                {% endif %}
+        <h2 class="d-flex justify-content-center align-items-center mb-4">{{ form_title }}</h2>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+                {% if field.errors %}
+                    <small>
+                        <div class="alert alert-danger mt-1 mb-0" role="alert">
+                            {% for message in field.errors %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </div>
+                    </small>
+                {% endif %}
+                <small>
+                    {% if field.help_text %}
+                        <div class="alert alert-warning mt-1 mb-2" role="alert">
+                            {{ field.help_text | safe }}
+                        </div>
+                    {% endif %}
+                </small>
+            </div>
+        {% endfor %}
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-lg mt-4">立即{{ form_title }}</button>
+        </div>
+        <div class="d-flex justify-content-end">
+            {% if form_title == '注册' %}
+                <a href="{% url 'user:login' %}">立即登录</a>
+            {% else %}
+                <a href="{% url 'user:register' %}">立即注册</a>
+            {% endif %}
+        </div>
+        {% for message in messages %}
+            <div class="alert
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    alert-danger
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    alert-info
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    alert-warning
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    alert-success
+                {% endif %}
+             mt-1 mb-0" role="alert">
+                {{ message }}
+            </div>
+            </small>
+        {% endfor %}
+
+        </form>
+    </div>
+
+{% endblock %}
+
