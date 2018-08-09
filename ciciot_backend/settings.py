@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jql14y3&1x66f*@a@%49lvq4a$5e4)a@6$psab79m4$+(i4rns'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'PRODUCTION' != os.getenv('DJANGO_ENV', 'DEVELOPMENT')
 
 ALLOWED_HOSTS = ['*']
 
@@ -119,7 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/'
 CKEDITOR_BASEPATH = STATIC_URL + 'ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = "uploads/"
