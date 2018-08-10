@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load tz %}
 
 {% block meta_head %}
     {{ block.super }}
@@ -40,7 +41,10 @@
                                 <a href="{% url 'article:detail' article.id %}"><img
                                         src="/static/ciciot/static/journal/circle.png"><span
                                         class="article-title">{{ article.title | truncatechars:25 }}</span><span
-                                        class="d-none d-xl-block article-date">{{ article.pub_date | date:"Y-m-d" }}</span></a>
+                                        class="d-none d-xl-block article-date">
+                                        {% timezone 'Asia/Shanghai' %}
+                                            {{ article.pub_date | date:"Y-m-d" }}</span></a>
+                                        {% endtimezone %}
                             </div>
                         {% endfor %}
                     </div>

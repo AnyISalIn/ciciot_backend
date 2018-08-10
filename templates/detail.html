@@ -1,5 +1,7 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load tz %}
+{% load like %}
 {% block meta_head %}
     {{ block.super }}
     <link href="{% static "ciciot/css/details.css" %}" rel="stylesheet">
@@ -18,10 +20,13 @@
                 <div class="col-lg-9">
                     <h1>{{ article.title }}</h1>
                     <div class="d-flex article-info flex-row">
-                        <div class="pub-date mr-2">{{ article.pub_date | date:"Y-m-d H:i" }}</div>
+                        <div class="pub-date mr-2">
+                            {% timezone 'Asia/Shanghai' %}
+                                {{ article.pub_date | date:"Y-m-d H:i" }}</div>
+                            {% endtimezone %}
                         <div class="author mr-auto">来源：{{ article.author.name }}</div>
-                        <div class="number mr-2">浏览：288</div>
-                        <div class="like-count">点赞：1314</div>
+                        <div class="number mr-2">浏览：{{ article.view }}</div>
+                        <div class="like-count">点赞：{{ article.like_set.count }}</div>
                     </div>
                     <hr>
                     <div class="article-content">
@@ -34,7 +39,13 @@
                             <i class="fa fa-share-square-o fa-lg fa-fw" aria-hidden="true"></i>分享
                         </div>
                         <div class="like ml-4 d-flex justify-content-center align-items-center">
-                            <i class="fa fa-thumbs-o-up fa-lg fa-fw" aria-hidden="true"></i>点赞
+                            {% is_like request.user article as liked %}
+                            <i class="fa {% if liked %}
+                             fa-thumbs-up
+                             {% else %}
+                             fa-thumbs-o-up
+                            {% endif %}
+                             fa-lg fa-fw" aria-hidden="true"></i>点赞
                         </div>
                     </div>
                 </div>
@@ -87,11 +98,34 @@
 
 {% block script %}
     {{ block.super }}
+
     <script>
         $('.like').click(function () {
-            $(this).children('i').removeClass('fa-thumbs-to-up');
-            $(this).children('i').addClass('fa-thumbs-up');
-        })
+            var likeIcon = $(this).children('i')
+            if (likeIcon.hasClass('fa-thumbs-o-up')) {
+                $.ajaxSetup({
+                    data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                    beforeSend: function () {
+                        likeIcon.addClass('fa-spinner')
+                    },
+                    complete: function () {
+                        likeIcon.removeClass('fa-spinner')
+                    }
+                })
+                ;
+                $.post(
+                    '{% url 'article:like' article.id %}', function (data) {
+                        likeIcon.removeClass('fa-thumbs-o-up');
+                        likeIcon.addClass('fa-thumbs-up');
+                    }
+                ).fail(
+                    function (data) {
+                        alert(data.responseJSON.msg)
+                    }
+                )
+            }
+        });
+
         window._bd_share_config = {
             "common": {
                 "bdSnsKey": {},

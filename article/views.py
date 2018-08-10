@@ -1,7 +1,8 @@
-from article.models import Article, Category
+from article.models import Article, Category, Like
 
 from django.views.generic import TemplateView, View
 from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
 
 
 def get_hot_articles(number):
@@ -35,6 +36,7 @@ class DetailView(View):
 
     def get(self, request, pk):
         article = get_object_or_404(Article, is_public=True, pk=pk)
+        article.view += 1
         context = {
             'page_title': '{} - 物联网技术与应用'.format(article.title),
             'article': article,
@@ -42,6 +44,8 @@ class DetailView(View):
             'hot_articles': get_hot_articles(6),
             'recomment_articles': Article.objects.filter(is_public=True)[:5],
         }
+
+        article.save()
 
         return render(request, self.template_name, context)
 
@@ -94,3 +98,18 @@ class SearchView(View):
                                                     'hot_articles': get_hot_articles(6),
                                                     'recomment_articles': Article.objects.filter(is_public=True)[:5],
                                                     })
+
+
+class LikeView(View):
+
+    def post(self, request, pk):
+        if not request.user.is_authenticated:
+            return JsonResponse({'msg': '需要登录才能喜欢这篇文章'}, status=401)
+        article = Article.objects.get(pk=pk)
+        if not article:
+            return JsonResponse({'msg': '文章未找到'}, status=404)
+        like = Like()
+        like.user = request.user
+        like.article = article
+        like.save()
+        return JsonResponse({'msg': 'success'}, status=201)
