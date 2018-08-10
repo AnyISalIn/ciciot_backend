@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load tz %}
 {% block meta_head %}
     {{ block.super }}
     <link href="{% static "ciciot/css/details.css" %}" rel="stylesheet">
@@ -18,7 +19,10 @@
                 <div class="col-lg-9">
                     <h1>{{ article.title }}</h1>
                     <div class="d-flex article-info flex-row">
-                        <div class="pub-date mr-2">{{ article.pub_date | date:"Y-m-d H:i" }}</div>
+                        <div class="pub-date mr-2">
+                            {% timezone 'Asia/Shanghai' %}
+                                {{ article.pub_date | date:"Y-m-d H:i" }}</div>
+                            {% endtimezone %}
                         <div class="author mr-auto">来源：{{ article.author.name }}</div>
                         <div class="number mr-2">浏览：288</div>
                         <div class="like-count">点赞：1314</div>
