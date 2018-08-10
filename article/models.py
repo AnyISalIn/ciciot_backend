@@ -45,7 +45,22 @@ class Article(models.Model):
 
     @property
     def headline(self):
-        return BeautifulSoup(self.content, 'lxml').p.text[:36]
+        return ''.join(item.text for item in BeautifulSoup(self.content, 'lxml').find_all('p'))[:36]
+
+    @property
+    def raw_text(self):
+        return ''.join(item.text for item in BeautifulSoup(self.content, 'lxml').find_all('p'))
+
+    @staticmethod
+    def highlighted(text, keyword):
+        index = text.find(keyword)
+        if index == -1:
+            return
+        before_text = text[index - 18:index]
+        after_text = text[index + len(keyword):index + len(keyword) + 18]
+        return mark_safe(''.join([before_text,
+                                  '<mark>{}</mark>'.format(keyword),
+                                  after_text]))
 
     class Meta:
         ordering = ['-pub_date']

@@ -1,8 +1,9 @@
 from article.models import Article, Category, Like
 
+from django.db.models import Q
+from django.http import JsonResponse
 from django.views.generic import TemplateView, View
 from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse
 
 
 def get_hot_articles(number):
@@ -91,7 +92,7 @@ class SearchView(View):
 
     def get(self, request):
         keyword = request.GET.get('keyword', '')
-        articles = Article.objects.filter(title__contains=keyword).all()
+        articles = Article.objects.filter(Q(title__contains=keyword) | Q(content__contains=keyword)).all()
         return render(request, self.template_name, {'articles': articles,
                                                     'keyword': keyword,
                                                     'count': articles.count(),

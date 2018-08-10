@@ -45,6 +45,10 @@ input[type=submit] {
     border-radius: 0px;
 }
 
+mark {
+    background-color: yellow;
+}
+
 .read-more {
     height: 60px;
     margin-top: 29px;
@@ -109,6 +113,10 @@ input[type=submit] {
 
     .search-content {
         border-left: 1px solid #cccccc;
+    }
+    
+    .pub-date {
+        display: none;
     }
 
 }
