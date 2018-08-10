@@ -108,6 +108,9 @@ class LikeView(View):
         article = Article.objects.get(pk=pk)
         if not article:
             return JsonResponse({'msg': '文章未找到'}, status=404)
+        if request.user.like_set.filter(article__id=pk).first():
+            return JsonResponse({'msg': '已经喜欢过这篇文章了'}, status=409)
+
         like = Like()
         like.user = request.user
         like.article = article
