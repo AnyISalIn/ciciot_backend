@@ -19,10 +19,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.urls import path
 from django.contrib import admin
-from article.views import IndexView
+from article.views import SiteIndexView
 
 urlpatterns = [
-                  path('', IndexView.as_view(), name='home'),
+                  path('', SiteIndexView.as_view(), name='home'),
                   path('admin/', admin.site.urls),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
                   path('articles/', include('article.urls', 'article')),

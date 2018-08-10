@@ -56,11 +56,11 @@ class Article(models.Model):
         index = text.find(keyword)
         if index == -1:
             return
-        before_text = text[index - 18:index]
-        after_text = text[index + len(keyword):index + len(keyword) + 18]
-        return mark_safe(''.join([before_text,
+        before_text = text[:index]
+        after_text = text[index + len(keyword):]
+        return mark_safe(''.join([before_text[:18],
                                   '<mark>{}</mark>'.format(keyword),
-                                  after_text]))
+                                  after_text[:18]]))
 
     class Meta:
         ordering = ['-pub_date']

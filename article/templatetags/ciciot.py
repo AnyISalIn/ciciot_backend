@@ -1,5 +1,5 @@
 from django import template
-from article.models import Like, Article
+from article.models import Article
 
 register = template.Library()
 
