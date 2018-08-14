@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 
@@ -61,6 +62,9 @@ class Article(models.Model):
         return mark_safe(''.join([before_text[:18],
                                   '<mark>{}</mark>'.format(keyword),
                                   after_text[:18]]))
+
+    def get_absolute_url(self):
+        return reverse_lazy('article:detail', kwargs={'pk': self.id})
 
     class Meta:
         ordering = ['-pub_date']
