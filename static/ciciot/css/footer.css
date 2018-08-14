@@ -41,19 +41,13 @@
 }
 
 #footers p {
-    font-size: 14px;
-    line-height: 10px;
     color: #8c8c8c;
 }
 
-#footers .col-md {
-    padding: 0px;
-}
-
 .title {
-    font-size: 17px;
-    margin-top: 37px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-top: 55px;
+    margin-bottom: 20px;
 }
 
 .last {
@@ -61,7 +55,7 @@
 }
 
 .er {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #footers p a {
@@ -71,4 +65,8 @@
 
 #footers p a:hover {
     color: #000;
+}
+
+.copyright p {
+    font-size: 16px;
 }
