@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'article',
     'ckeditor_uploader',
     'ckeditor',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +46,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -118,6 +122,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+CORS_ORIGIN_ALLOW_ALL = True
 
 STATIC_URL = '/static/'
 if DEBUG:
@@ -142,3 +147,4 @@ EMAIL_FROM = os.getenv('EMAIL_FROM')
 
 GEETEST_ID = os.getenv('GEETEST_ID')
 GEETEST_KEY = os.getenv('GEETEST_KEY')
+

@@ -28,7 +28,8 @@ urlpatterns = [
                   path('', SiteIndexView.as_view(), name='home'),
                   path('admin/', admin.site.urls),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
-                  path('articles/', include('article.urls', 'article')),
+                  path('articles/', include('article.urls.view_urls', 'article')),
+                  path('api/', include('article.urls.api_urls')),
                   path('user/', include('user.urls', 'user')),
                   path('sitemap.xml', sitemap, {'sitemaps': {'article': GenericSitemap(dict(
                       queryset=Article.objects.all(), date_field='pub_date'), priority=0.6)}},
