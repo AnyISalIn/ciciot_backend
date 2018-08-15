@@ -133,6 +133,7 @@ MEDIA_URL = '/'
 CKEDITOR_BASEPATH = STATIC_URL + 'ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 ADMIN_SITE_HEADER = '物联网学报后台管理'
+CKEDITOR_STORAGE_BACKEND = 'ciciot_backend.storage.AliyunObjectStorage'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -148,3 +149,8 @@ EMAIL_FROM = os.getenv('EMAIL_FROM')
 GEETEST_ID = os.getenv('GEETEST_ID')
 GEETEST_KEY = os.getenv('GEETEST_KEY')
 
+ALIYUN_OSS_KEY_ID = os.getenv('ALIYUN_OSS_KEY_ID')
+ALIYUN_OSS_KEY_SECRET = os.getenv('ALIYUN_OSS_KEY_SECRET')
+ALIYUN_OSS_BUCKET_NAME = os.getenv('ALIYUN_OSS_BUCKET_NAME')
+ALIYUN_OSS_ENDPOINT = os.getenv('ALIYUN_OSS_ENDPOINT')
+ALIYUN_OSS_ACCESS_URL = os.getenv('ALIYUN_OSS_ACCESS_URL')
